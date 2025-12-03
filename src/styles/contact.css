@@ -1,0 +1,132 @@
+.contact-form {
+    padding: 5rem 0;
+    padding-top: 120px;
+    font-size: 2rem;
+    background: #f7f7f7;
+}
+
+.pubg-skills {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pubg-skills .required {
+    flex: 1;
+    height: auto;
+    background: #fff;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+.pubg-skills .form {
+    flex: 1;
+    font-size: 1.6rem;
+    background: #fff;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+.pubg-skills .required i {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.pubg-skills .required h2 {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.pubg-skills .required .image {
+    width: 95%;
+    height: 60%;
+    object-fit: cover;
+    object-position: right;
+    margin-top: 2rem;
+}
+
+.clan-name,
+.email-id,
+.contact-no {
+    margin-bottom: 2rem;
+}
+
+.form h1 {
+    letter-spacing: 0.25em;
+    margin-bottom: 1rem;
+}
+
+.form h1::after {
+    content: '';
+    display: block;
+    border: 2px solid #e63946;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-btn {
+    border: 2px solid #e63946;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    background: #e63946;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 1.5em;
+    transition: all 0.3s ease;
+}
+
+.form-btn:hover {
+    background: transparent;
+    color: #e63946;
+}
+
+.success-msg {
+    color: green;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 890px) {
+    .pubg-skills {
+        flex-direction: column;
+    }
+
+    .pubg-skills .required {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .pubg-skills .form {
+        width: 100%;
+    }
+}

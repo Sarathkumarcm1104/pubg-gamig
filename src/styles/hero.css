@@ -1,0 +1,55 @@
+.afterlogin {
+    width: 100%;
+    background: #fffbfcf5;
+    background-image: url('IMG/pubg-48230.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    z-index: 1;
+    margin-top: 70px;
+}
+
+.containers {
+    width: 100%;
+    padding-top: 200px;
+}
+
+.left-content {
+    text-align: center;
+    justify-content: center;
+    top: 50%;
+    height: 470px;
+}
+
+.left-content h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin: auto 0%;
+}
+
+.left-content p {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .containers {
+        width: 100%;
+        background-image: url('IMG/pubg-48230.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-top: 100px;
+        z-index: 1;
+    }
+
+    .left-content {
+        display: black;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}

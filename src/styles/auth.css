@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+#signlogform {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#signlogform h1 {
+    font-family: none;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#signlogform label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.exitx, .exitxx {
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.exitx:hover, .exitxx:hover {
+    color: #e9e2e3;
+}
+
+.formlog {
+    background: linear-gradient(25deg, rgb(241, 241, 241) 50%, #ee4758 50%);
+    padding: 80px;
+    position: relative;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftformlog {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.rightformlog {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-image: url('IMG/peakpxs.jpg');
+    background-size: cover;
+    height: 450px;
+    width: 800px;
+}
+
+.rightformlog h2 {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.rightformlog .imgisitecon {
+    text-align: center;
+    padding: 100px;
+    font-size: large;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login label {
+    display: block;
+    margin-bottom: 0px;
+}
+
+.login div {
+    margin-bottom: 50px;
+}
+
+.emailseclog, .passseclog {
+    margin-bottom: 20px;
+}
+
+.login input[type="email"],
+.login input[type="password"],
+.login input[type="text"] {
+    width: calc(80% - 10px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.subbtnl {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.subbtnl:hover {
+    background-color: #2980b9;
+}
+
+.signupbtnlogin {
+    border-radius: 5px;
+    text-decoration: none;
+    color: #2087cc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.signupbtnlogin:hover {
+    color: #d41515a4;
+}
+
+.passlablog {
+    float: left;
+    margin-bottom: 0px;
+}
+
+.login .showhide {
+    padding: 0px;
+    background: none;
+    float: right;
+    margin-right: 120px;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.leftformlog span {
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.forget {
+    margin-bottom: 30px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Sign up form */
+
+.formsign {
+    background: linear-gradient(-35deg, #ee47588a 50%, rgb(241, 241, 241) 50%);
+    padding: 80px;
+    position: relative;
+}
+
+.signup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftformsign {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-image: url('IMG/peakpxg.jpg');
+    background-size: cover;
+    height: 800px;
+    width: 1270px;
+}
+
+.rightformsign {
+    flex: 1;
+    padding-left: 60px;
+}
+
+.signup div {
+    margin-bottom: 20px;
+}
+
+.signup input[type="text"],
+.signup input[type="password"],
+.signup input[type="email"] {
+    width: 80%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.religionsi {
+    margin-left: 20px;
+}
+
+.hobbi {
+    margin-left: 27px;
+}
+
+.igenters {
+    margin-left: 27px;
+}
+
+.signup input[type="radio"],
+.signup input[type="date"],
+.signup select {
+    padding: 4px;
+}
+
+.signup .showhide {
+    padding: 0px;
+    background: none;
+    float: right;
+    margin-right: 120px;
+    border: none;
+    color: #519ad6;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.subbtns {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.subbtns:hover {
+    background-color: #2980b9;
+}
+
+.loginbtnsignup {
+    border-radius: 5px;
+    text-decoration: none;
+    color: #2087cc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rightformsign span {
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsive */
+
+@media (max-width: 350px) {
+    .formlog {
+        padding: 20px;
+    }
+
+    .formsign {
+        padding: 20px;
+    }
+
+    form.login {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .leftformlog {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .rightformlog {
+        display: none;
+    }
+
+    .login .showhide {
+        margin-right: 70px;
+    }
+
+    .signup .showhide {
+        margin-right: 70px;
+    }
+
+    form.signup {
+        flex-direction: column;
+    }
+
+    .leftformsign {
+        display: none;
+    }
+
+    .rightformsign {
+        padding: 0;
+    }
+
+    .signup input[type="text"],
+    .signup input[type="password"],
+    .signup input[type="email"] {
+        width: 100%;
+    }
+
+    .signup label {
+        font-weight: 200;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 500px) {
+    .formlog {
+        padding: 40px;
+    }
+
+    .formsign {
+        padding: 40px;
+    }
+
+    form.login {
+        flex-direction: column;
+    }
+
+    .leftformlog {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .rightformlog {
+        display: none;
+    }
+
+    .login .showhide {
+        margin-right: 70px;
+    }
+
+    .signup .showhide {
+        margin-right: 70px;
+    }
+
+    form.signup {
+        flex-direction: column;
+    }
+
+    .leftformsign {
+        display: none;
+    }
+
+    .rightformsign {
+        padding: 0;
+    }
+
+    .signup input[type="text"],
+    .signup input[type="password"],
+    .signup input[type="email"] {
+        width: 100%;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 890px) {
+    .formlog {
+        padding: 60px;
+    }
+
+    .formsign {
+        padding: 60px;
+    }
+
+    form.login {
+        flex-direction: column;
+    }
+
+    .leftformlog {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .rightformlog {
+        display: none;
+    }
+
+    .login .showhide {
+        margin-right: 90px;
+    }
+
+    .signup .showhide {
+        margin-right: 130px;
+    }
+
+    form.signup {
+        flex-direction: column;
+    }
+
+    .leftformsign {
+        display: none;
+    }
+
+    .rightformsign {
+        padding: 0;
+    }
+
+    .signup input[type="text"],
+    .signup input[type="password"],
+    .signup input[type="email"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+p, li {
+    font-size: 2.6rem;
+    letter-spacing: 0.07;
+}
+
+.box-wrapper p {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.10em;
+    font-weight: 500;
+}
+
+.container {
+    width: 100%;
+    margin: 0% auto;
+}
+
+.imagecontainer {
+    width: 100%;
+}
+
+.containers {
+    width: 100%;
+    background: #fffbfcf5;
+    background-image: url('IMG/pubg-48230.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 200px;
+    z-index: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10em;
+    transition: all 0.3s ease;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.lt-space {
+    letter-spacing: 0.1em;
+}
+
+.btn-primary {
+    background-color: rgb(22, 117, 196);
+    border-radius: 10em;
+    letter-spacing: 0.15em;
+}
+
+.btn-primary:hover {
+    background: #1388e7;
+}
+
+.btn-secondary {
+    border: 2px solid #ee4758;
+    border-radius: 1.5em;
+    color: #ee4758;
+    background: white;
+    letter-spacing: 0.15em;
+}
+
+.btn-secondary:hover {
+    background: #fcf3f2;
+}
+
+.lg-heading {
+    font-size: 3.5rem;
+}
+
+.md-heading {
+    font-size: 2.2rem;
+}
+
+.sm-heading {
+    font-size: 1.8rem;
+}
+
+.text-whi {
+    color: rgb(8, 8, 8);
+}
+
+.text-red {
+    color: #f1eded;
+}
+
+.text-light {
+    color: #0e0d0d;
+}
+
+.text-black {
+    color: #333333;
+}
+
+.text-gray {
+    color: #000000;
+}
+
+.bg-dark {
+    background-color: #263238;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+.fix {
+    padding: 0rem;
+}
+
+.morebtn {
+    background-color: transparent;
+    color: #ee4758;
+    border: 2px solid #ee4758;
+    border-radius: 1.5em;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.morebtn:hover {
+    background-color: #ee4758;
+    color: white;
+}
+
+.user-name {
+    color: white;
+    padding: 0 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 350px) {
+    :root {
+        font-size: 45%;
+    }
+    p {
+        font-size: 1.0rem;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 500px) {
+    :root {
+        font-size: 50%;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 890px) {
+    :root {
+        font-size: 50%;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 890px) and (max-width: 1200px) {
+    :root {
+        font-size: 57%;
+    }
+}
