@@ -2,83 +2,81 @@ import React, { useState } from 'react';
 import '../styles/auth.css';
 
 export function LoginModal({ isOpen, onClose, onLogin, onOpenSignup }) {
+  if (!isOpen) return null;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const validate = () => {
+    let ok = true;
     setEmailError('');
     setPasswordError('');
-
-    let isValid = true;
-    if (!email) {
-      setEmailError('Email is required');
-      isValid = false;
-    }
-    if (!password) {
-      setPasswordError('Password is required');
-      isValid = false;
-    }
-
-    if (isValid) {
-      onLogin({ email, password });
-      setEmail('');
-      setPassword('');
-    }
+    if (!email) { setEmailError('Email required'); ok = false; }
+    if (!password) { setPasswordError('Password required'); ok = false; }
+    return ok;
   };
 
-  if (!isOpen) return null;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    if (onLogin) onLogin({ email, password });
+    onClose && onClose();
+  };
 
   return (
-    <section id="signlogform" style={{ display: 'block' }}>
-      <div className="formlog" id="formlogin">
+    <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10000 }}>
+      {/* backdrop */}
+      <div onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)' }}></div>
+
+      {/* centered modal content */}
+  <div className="formlog" id="react-formlogin" style={{ position: 'relative', zIndex: 10001, maxWidth: '1100px', width: '95%' }}>
         <form className="login" onSubmit={handleSubmit}>
-          <div className="leftformlog" id="leftformlogin">
+          <div className="leftformlog" id="react-leftformlogin">
             <span className="exitx" onClick={onClose}>
               <i className="fas fa-times-circle fa-rotate-90 fa-sm"></i>
             </span>
             <h1>Log in</h1>
-            
+
             <div className="emailseclog">
               <label>Email Id : </label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required 
+                required
               />
               {emailError && <span className="emailoginerror">{emailError}</span>}
             </div>
-            
+
             <div className="passseclog">
               <label className="passlablog">Password :</label>
-              <button 
+              <button
                 type="button"
-                className="showhide" 
+                className="showhide"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 <i className="far fa-eye"></i>
                 {showPassword ? 'Hide' : 'Show'}
               </button>
-              <input 
-                type={showPassword ? 'text' : 'password'} 
+              <input
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="ilpasslog" 
-                required 
+                className="ilpasslog"
+                required
               />
               {passwordError && <span className="passloginerror">{passwordError}</span>}
             </div>
-            
+
             <button type="submit" className="subbtnl">submit</button>
             <p className="forget">Forget Password?</p>
-            <p>If you don't have account click &#8594; <a href="#signup" className="signupbtnlogin" onClick={(e) => { e.preventDefault(); onClose(); onOpenSignup && onOpenSignup(); }}>Sign up</a></p>
+            <p>If you don't have account click &#8594; <a href="#signup" className="signupbtnlogin" onClick={(e) => { e.preventDefault(); onClose && onClose(); onOpenSignup && onOpenSignup(); }}>Sign up</a></p>
           </div>
-          
-          <div className="rightformlog" id="rightformlogin">
+
+          <div className="rightformlog" id="react-rightformlogin">
             <div className="imgisitecon">
               <h2>Ranked</h2>
               <i className="fas fa-headset"></i>
@@ -90,7 +88,6 @@ export function LoginModal({ isOpen, onClose, onLogin, onOpenSignup }) {
           </div>
         </form>
       </div>
-      <div onClick={onClose} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1000 }}></div>
-    </section>
+    </div>
   );
 }

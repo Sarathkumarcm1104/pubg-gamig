@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { GamesSection } from './components/GamesSection';
@@ -62,46 +63,53 @@ function App() {
     document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
-    <div className="App">
-      <Header 
-        isLoggedIn={isLoggedIn}
-        user={user}
-        onLogout={handleLogout}
-        onLoginClick={openLoginModal}
-      />
-      
-      <HeroSection 
+  const Home = () => (
+    <>
+      <HeroSection
         isLoggedIn={isLoggedIn}
         onLoginClick={openLoginModal}
         onPlayClick={handlePlayClick}
       />
-
       <GamesSection isLoggedIn={isLoggedIn} />
-
       <TeamSection />
-
       <FeaturesSection />
+    </>
+  );
 
-      <AboutSection onContactClick={() => window.scrollIntoView({ behavior: 'smooth' })} />
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Header
+          isLoggedIn={isLoggedIn}
+          user={user}
+          onLogout={handleLogout}
+          onLoginClick={openLoginModal}
+        />
 
-      <ContactSection />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutSection onContactClick={() => { /* no-op here */ }} />} />
+            <Route path="/contact" element={<ContactSection />} />
+          </Routes>
+        </main>
 
-      <LoginModal 
-        isOpen={showLoginModal}
-        onClose={closeLoginModal}
-        onLogin={handleLogin}
-        onOpenSignup={openSignupModal}
-      />
+        <LoginModal
+          isOpen={showLoginModal}
+          onClose={closeLoginModal}
+          onLogin={handleLogin}
+          onOpenSignup={openSignupModal}
+        />
 
-      <SignupModal 
-        isOpen={showSignupModal}
-        onClose={closeSignupModal}
-        onSignup={handleSignup}
-        onOpenLogin={openLoginModal}
-      />
+        <SignupModal
+          isOpen={showSignupModal}
+          onClose={closeSignupModal}
+          onSignup={handleSignup}
+          onOpenLogin={openLoginModal}
+        />
 
-      <Footer />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

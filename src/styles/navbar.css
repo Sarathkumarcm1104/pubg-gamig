@@ -2,7 +2,8 @@
     background: linear-gradient(to right, rgb(241, 241, 241) 50%, #ee4758 50%);
     position: fixed;
     width: 100%;
-    z-index: 2;
+    /* ensure header always sits above hero imagery */
+    z-index: 1000;
     top: 0;
 }
 
@@ -11,7 +12,7 @@
     background: linear-gradient(to right, rgb(241, 241, 241) 50%, #ee4758 50%);
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .navbar .logo {
