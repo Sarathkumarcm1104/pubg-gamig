@@ -55,10 +55,11 @@
     color: #fff;
     align-items: center;
     justify-content: center;
-    background-image: url('IMG/peakpxs.jpg');
+    background-image: url('/IMG/peakpxs.jpg');
     background-size: cover;
     height: 450px;
     width: 800px;
+    z-index: 1001;
 }
 
 .rightformlog h2 {
@@ -177,10 +178,11 @@
     color: #fff;
     align-items: center;
     justify-content: center;
-    background-image: url('IMG/peakpxg.jpg');
+    background-image: url('/IMG/peakpxg.jpg');
     background-size: cover;
     height: 800px;
     width: 1270px;
+    z-index: 1001;
 }
 
 .rightformsign {

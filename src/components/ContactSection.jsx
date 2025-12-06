@@ -49,7 +49,7 @@ export function ContactSection() {
               <h2 className="text-gray md-heading">contact no</h2>
               <p>9876543210</p>
             </div>
-            <img src="./IMG/contact.jpg.jpg" className="image" alt="pubg" />
+            <img src="/IMG/contact.jpg" className="image" alt="pubg" />
           </div>
           
           <form className="form" onSubmit={handleSubmit}>

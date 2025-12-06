@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/auth.css';
 
-export function SignupModal({ isOpen, onClose, onSignup }) {
+export function SignupModal({ isOpen, onClose, onSignup, onOpenLogin }) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -252,11 +252,11 @@ export function SignupModal({ isOpen, onClose, onSignup }) {
             </div>
             
             <button type="submit" className="subbtns">submit</button>
-            <p>If you already have account click &#8594; <a href="#login" className="loginbtnsignup">Log in</a></p>
+            <p>If you already have account click &#8594; <a href="#login" className="loginbtnsignup" onClick={(e) => { e.preventDefault(); onClose(); onOpenLogin && onOpenLogin(); }}>Log in</a></p>
           </div>
         </form>
       </div>
-      <div onClick={onClose} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: -1 }}></div>
+      <div onClick={onClose} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1000 }}></div>
     </section>
   );
 }

@@ -91,12 +91,14 @@ function App() {
         isOpen={showLoginModal}
         onClose={closeLoginModal}
         onLogin={handleLogin}
+        onOpenSignup={openSignupModal}
       />
 
       <SignupModal 
         isOpen={showSignupModal}
         onClose={closeSignupModal}
         onSignup={handleSignup}
+        onOpenLogin={openLoginModal}
       />
 
       <Footer />

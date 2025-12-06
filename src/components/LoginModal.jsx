@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/auth.css';
 
-export function LoginModal({ isOpen, onClose, onLogin }) {
+export function LoginModal({ isOpen, onClose, onLogin, onOpenSignup }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -75,7 +75,7 @@ export function LoginModal({ isOpen, onClose, onLogin }) {
             
             <button type="submit" className="subbtnl">submit</button>
             <p className="forget">Forget Password?</p>
-            <p>If you don't have account click &#8594; <a href="#signup" className="signupbtnlogin">Sign up</a></p>
+            <p>If you don't have account click &#8594; <a href="#signup" className="signupbtnlogin" onClick={(e) => { e.preventDefault(); onClose(); onOpenSignup && onOpenSignup(); }}>Sign up</a></p>
           </div>
           
           <div className="rightformlog" id="rightformlogin">
@@ -90,7 +90,7 @@ export function LoginModal({ isOpen, onClose, onLogin }) {
           </div>
         </form>
       </div>
-      <div onClick={onClose} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: -1 }}></div>
+      <div onClick={onClose} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1000 }}></div>
     </section>
   );
 }

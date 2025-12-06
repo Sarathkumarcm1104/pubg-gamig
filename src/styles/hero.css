@@ -1,7 +1,7 @@
 .afterlogin {
     width: 100%;
     background: #fffbfcf5;
-    background-image: url('IMG/pubg-48230.png');
+    background-image: url('/IMG/pubg-48230.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -36,9 +36,9 @@
 }
 
 @media (max-width: 500px) {
-    .containers {
+        .containers {
         width: 100%;
-        background-image: url('IMG/pubg-48230.png');
+        background-image: url('/IMG/pubg-48230.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
