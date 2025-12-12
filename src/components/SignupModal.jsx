@@ -23,14 +23,32 @@ export function SignupModal({ isOpen, onClose, onSignup, onOpenLogin }) {
   const handleChange = (e) => {
     const { name, value, type, checked, options } = e.target;
 
-    if (type === 'select-multiple') {
-      const selected = Array.from(options).filter(o => o.selected).map(o => o.value);
-      setFormData(prev => ({ ...prev, [name]: selected }));
+    // support multi-checkbox group for hobbies (name === 'hobbies')
+    if (type === 'checkbox' && name === 'hobbies') {
+      setFormData(prev => {
+        const current = Array.isArray(prev.hobbies) ? prev.hobbies.slice() : [];
+        if (checked) {
+          // add if not present
+          if (!current.includes(value)) current.push(value);
+        } else {
+          // remove
+          const idx = current.indexOf(value);
+          if (idx > -1) current.splice(idx, 1);
+        }
+        return { ...prev, hobbies: current };
+      });
       return;
     }
 
+    // normal checkbox (single boolean fields)
     if (type === 'checkbox') {
       setFormData(prev => ({ ...prev, [name]: checked }));
+      return;
+    }
+
+    if (type === 'select-multiple') {
+      const selected = Array.from(options).filter(o => o.selected).map(o => o.value);
+      setFormData(prev => ({ ...prev, [name]: selected }));
       return;
     }
 
@@ -58,7 +76,10 @@ export function SignupModal({ isOpen, onClose, onSignup, onOpenLogin }) {
     <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10000 }}>
       <div onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)' }}></div>
 
-      <div className="formsign" style={{ position: 'relative', zIndex: 10001, maxWidth: '1200px', width: '95%' }}>
+      {/* visible fixed close button so users can always dismiss */}
+      <button className="modal-close" aria-label="Close" onClick={onClose}>&times;</button>
+
+      <div className="formsign modal-full" style={{ position: 'relative', zIndex: 10001, maxWidth: '1200px', width: '95%' }}>
         <form className="signup" onSubmit={handleSubmit}>
           <div className="leftformsign"></div>
 
@@ -153,21 +174,20 @@ export function SignupModal({ isOpen, onClose, onSignup, onOpenLogin }) {
 
             <div className="hobb">
               <label>Hobbies :</label>
-              <select
-                name="hobbies"
-                multiple
-                value={formData.hobbies}
-                onChange={handleChange}
-              >
-                <option value="cricket">Cricket</option>
-                <option value="football">Football</option>
-                <option value="swimming">Swimming</option>
-                <option value="reading">Reading</option>
-                <option value="painting">Painting</option>
-                <option value="cooking">Cooking</option>
-                <option value="gardening">Gardening</option>
-                <option value="traveling">Traveling</option>
-              </select>
+              <div className="hobb-checkboxes">
+                {['cricket','football','swimming','reading','painting','cooking','gardening','traveling'].map((h) => (
+                  <label key={h} className="hobby-chip">
+                    <input
+                      type="checkbox"
+                      name="hobbies"
+                      value={h}
+                      checked={Array.isArray(formData.hobbies) && formData.hobbies.includes(h)}
+                      onChange={handleChange}
+                    />
+                    <span>{h.charAt(0).toUpperCase() + h.slice(1)}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             <div className="reli">

@@ -69,7 +69,9 @@ function App() {
         isLoggedIn={isLoggedIn}
         onLoginClick={openLoginModal}
         onPlayClick={handlePlayClick}
+        showTeam={false}
       />
+      {/* don't render characters inside hero to avoid duplication; TeamSection renders the team */}
       <GamesSection isLoggedIn={isLoggedIn} />
       <TeamSection />
       <FeaturesSection />

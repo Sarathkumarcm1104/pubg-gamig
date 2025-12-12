@@ -31,8 +31,11 @@ export function LoginModal({ isOpen, onClose, onLogin, onOpenSignup }) {
       {/* backdrop */}
       <div onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)' }}></div>
 
-      {/* centered modal content */}
-  <div className="formlog" id="react-formlogin" style={{ position: 'relative', zIndex: 10001, maxWidth: '1100px', width: '95%' }}>
+      {/* visible fixed close button so users can always dismiss */}
+      <button className="modal-close" aria-label="Close" onClick={onClose}>&times;</button>
+
+      {/* centered modal content (now can be full-screen via CSS .modal-full) */}
+  <div className="formlog modal-full" id="react-formlogin" style={{ position: 'relative', zIndex: 10001, maxWidth: '1100px', width: '95%' }}>
         <form className="login" onSubmit={handleSubmit}>
           <div className="leftformlog" id="react-leftformlogin">
             <span className="exitx" onClick={onClose}>
